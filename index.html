@@ -1,478 +1,796 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta name="theme-color" content="#BC8887" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Undangan Pernikahan [Nama CPW] & [Nama CPP]</title>
+    <title>Undangan Pernikahan Fajar &amp; Aisyah - Sabtu, 17 Oktober 2026</title>
 
-    <meta property="og:title" content="Undangan Pernikahan Nama CPW & Nama CPW - Hari, 21 April 2021">
-    <meta property="og:description" content="Undangan Pernikahan Nama CPW & Nama CPW - Sabtu, 21 April 2021 di [Nama Tempat], [Nama Kota]">
+    <meta property="og:title" content="Undangan Pernikahan Muhammad Fajar Ramadhan &amp; Aisyah Nur Aulia - Sabtu, 17 Oktober 2026">
+    <meta property="og:description" content="Undangan Pernikahan Fajar &amp; Aisyah - Sabtu, 17 Oktober 2026 di Gedung Serbaguna Peterongan, Jombang">
     <meta property="og:locale" content="id_ID" />
-    <meta property="og:image" content="https://simple-wedding-invitation.dae.ng/image/samantha-gades-x40Q9jrEVT0-unsplash.jpg">
-    <meta property="og:url" content="http://simple-wedding-invitation.dae.ng/index.html">
+    <meta property="og:image" content="image/samantha-gades-x40Q9jrEVT0-unsplash.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Bulma Version 0.8.x-->
+
+    <!-- Bulma -->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bulma-tooltip@0.1.5/dist/bulma-tooltip.min.css" />
     <link rel="stylesheet" type="text/css" href="css/menikah.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css" />
-    <script
-      src="https://kit.fontawesome.com/2828f7885a.js"
-      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/jquery.coundown.js"></script>
+    <!-- AOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- jQuery (satu saja) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="image/favicon.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23064379-20"></script>
-    <!-- Begin Script for Countdown -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-23064379-20');
-    </script>
-    <!-- Begin Script for Countdown -->
+    <style>
+      /* Countdown realtime */
+      #hitungmundur {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 8px;
+        padding: 20px 0 10px;
+        margin: 0;
+      }
+      #hitungmundur li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #hitungmundur li span {
+        font-size: 3rem;
+        font-weight: 900;
+        font-family: 'Raleway', sans-serif;
+        color: white;
+        line-height: 1;
+        min-width: 70px;
+        text-align: center;
+        background: rgba(255,255,255,0.15);
+        border-radius: 10px;
+        padding: 8px 10px;
+      }
+      #hitungmundur li p {
+        font-size: 0.75rem;
+        color: whitesmoke;
+        margin-top: 6px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      #hitungmundur li.separator {
+        font-size: 2.5rem;
+        color: white;
+        font-weight: 900;
+        padding-bottom: 22px;
+      }
+      #hitungmundur li.separator p { display: none; }
+      .countdown-done {
+        font-size: 1.3rem;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        padding: 10px 0;
+      }
 
-    <!-- Github Button -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+      /* Amplop digital */
+      .amplop-section {
+        background-color: #F4E2E2;
+        padding: 60px 40px;
+        text-align: center;
+      }
+      .amplop-card {
+        display: inline-block;
+        background: white;
+        border-radius: 16px;
+        padding: 30px 40px;
+        box-shadow: 0 4px 20px rgba(153,110,109,0.15);
+        margin-top: 20px;
+        min-width: 280px;
+      }
+      .amplop-card .bank-name {
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: #996E6D;
+        font-family: 'Raleway', sans-serif;
+        letter-spacing: 2px;
+      }
+      .amplop-card .rekening {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #333;
+        letter-spacing: 3px;
+        margin: 8px 0 4px;
+        font-family: 'Raleway', sans-serif;
+      }
+      .amplop-card .atas-nama {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 16px;
+      }
+      .btn-copy {
+        background-color: #996E6D;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        font-family: 'Raleway', sans-serif;
+        transition: background 0.2s;
+      }
+      .btn-copy:hover { background-color: #BC8887; }
+      .btn-copy.copied { background-color: #59a543; }
+
+      /* Profil mempelai */
+      .profil-section {
+        background-color: #EDD2D1;
+        padding: 60px 40px;
+      }
+      .profil-card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        margin: 16px auto;
+        max-width: 480px;
+        box-shadow: 0 4px 20px rgba(153,110,109,0.12);
+        text-align: left;
+      }
+      .profil-card .profil-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .profil-card .profil-nama {
+        font-family: 'Rouge Script', sans-serif;
+        font-size: 2.5rem;
+        color: #996E6D;
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+      .profil-card .profil-panggilan {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 14px;
+        font-style: italic;
+      }
+      .profil-card .profil-info {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.7;
+      }
+      .profil-card .profil-info strong {
+        color: #996E6D;
+      }
+
+      /* Akad & Resepsi cards */
+      .acara-card {
+        background: white;
+        border-radius: 16px;
+        padding: 28px;
+        margin: 16px;
+        box-shadow: 0 4px 20px rgba(153,110,109,0.12);
+        text-align: center;
+        flex: 1;
+        min-width: 250px;
+      }
+      .acara-card .acara-icon { font-size: 2rem; margin-bottom: 10px; }
+      .acara-card .acara-judul {
+        font-weight: 900;
+        font-size: 1.2rem;
+        color: #996E6D;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-family: 'Raleway', sans-serif;
+      }
+      .acara-card .acara-hari {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #333;
+      }
+      .acara-card .acara-tanggal {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #996E6D;
+        line-height: 1;
+        font-family: 'Raleway', sans-serif;
+      }
+      .acara-card .acara-bulan {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      .acara-card .acara-waktu {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 6px;
+      }
+      .acara-card .acara-tempat {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+      }
+      .acara-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+      }
+
+      /* Cover Undangan */
+      body.locked-scroll {
+        overflow: hidden !important;
+      }
+      .cover-undangan {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(rgba(153, 110, 109, 0.7), rgba(0, 0, 0, 0.6)), url('image/samantha-gades-x40Q9jrEVT0-unsplash.jpg') center/cover no-repeat;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease-in-out;
+      }
+      .cover-undangan.open {
+        transform: translateY(-100vh);
+        opacity: 0;
+        pointer-events: none;
+      }
+      .cover-content {
+        color: white;
+      }
+      .cover-title {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .cover-names {
+        font-family: 'Rouge Script', sans-serif;
+        font-size: 4.5rem;
+        margin-bottom: 10px;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .cover-date {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+      }
+      .btn-buka {
+        background-color: white;
+        color: #996E6D;
+        border: none;
+        border-radius: 30px;
+        padding: 14px 32px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: 'Raleway', sans-serif;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: pulseBtn 2s infinite;
+      }
+      .btn-buka:hover {
+        background-color: #996E6D;
+        color: white;
+      }
+      @keyframes pulseBtn {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      #toTop {
+        height: 50px;
+        width: 50px;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #996E6D;
+        color: white;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+      }
+      #toTop:hover { background-color: #BC8887; }
+
+      /* Musik latar */
+      #music-btn {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: #996E6D;
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(14,25,80,0.3);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+      #music-btn:hover { background-color: #BC8887; }
+      #music-btn.playing { background-color: #59a543; }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+      #music-btn.playing i { animation: spin 3s linear infinite; }
+    </style>
   </head>
 
-  <body>
-    <!-- Begin Preloader -->
+  <body class="locked-scroll">
+    <!-- Cover Undangan -->
+    <div id="cover-undangan" class="cover-undangan">
+      <div class="cover-content">
+        <div class="cover-title">Undangan Pernikahan</div>
+        <div class="cover-names">Aisyah &amp; Fajar</div>
+        <div class="cover-date">17 Oktober 2026</div>
+        <button id="btn-buka-undangan" class="btn-buka" onclick="bukaUndangan()">
+          <i class="fas fa-envelope-open-text"></i> Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <!-- Preloader -->
     <div class="preloader-wrapper">
       <div class="preloader">
         <img src="image/favicon.png" alt="Flower" />
       </div>
     </div>
-    <!-- End Preloader-->
-    <!-- Begin Header -->
+
+    <!-- Header / Hero -->
     <div class="header-wrapper" id="home">
-      <!-- Begin Hero -->
       <section class="hero is-large">
-        <!-- Begin Mobile Nav -->
+        <!-- Mobile Nav -->
         <nav class="navbar is-transparent is-hidden-desktop">
-          <!-- Begin Burger Menu -->
           <div class="navbar-brand is-fixed-top">
             <div class="navbar-burger burger" data-target="mobile-nav">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span></span><span></span><span></span>
             </div>
           </div>
-          <!-- End Burger Menu -->
           <div id="mobile-nav" class="navbar-menu">
             <div class="navbar-end">
-              <div class="navbar-item">
-                <a class="navbar-item" href="#Waktu">
-                  Waktu
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#lokasi">
-                  Lokasi
-                </a>
-              </div>
-              
-              <div class="navbar-item">
-                <a class="navbar-item" href="#tentang-pasangan">
-                  Tentang CPW dan CPP
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#rsvp">
-                  RSVP
-                </a>
-              </div>
+              <div class="navbar-item"><a class="navbar-item" href="#acara">Acara</a></div>
+              <div class="navbar-item"><a class="navbar-item" href="#lokasi">Lokasi</a></div>
+              <div class="navbar-item"><a class="navbar-item" href="#mempelai">Mempelai</a></div>
+              <div class="navbar-item"><a class="navbar-item" href="#amplop">Amplop Digital</a></div>
+              <div class="navbar-item"><a class="navbar-item" href="#rsvp">RSVP</a></div>
             </div>
           </div>
         </nav>
-        <!-- End Mobile Nav -->
-        <!-- Begin Hero Content-->
+
+        <!-- Hero Content -->
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="subtitle">Undangan Pernikahan</h1>
-            <h2 class="title">Nama Wanita & Nama Pria</h2>
+            <h2 class="title">Aisyah &amp; Fajar</h2>
             <h4 class="subtitle tempatwaktu">
-              
-                Sabtu, 21 April 2021 
-                </br>
-                [Nama Tempat], [Nama Area]
-                </br>
-                [Nama Kota]
-              
+              Sabtu, 17 Oktober 2026
+              <br>
+              Gedung Serbaguna Peterongan, Jombang
             </h4>
           </div>
-          <!-- Start Countdown -->       
-          <div>
-            <ul id="hitungmundur" >
-              <li><span class="days">00</span><p class="days_text">Hari</p></li>
-              <li class="separator">:</li>
-              <li><span class="hours">00</span><p class="hours_text">Jam</p></li>
-              <li class="separator">:</li>
-              <li><span class="minutes">00</span><p class="minutes_text">Menit</p></li>
-              <li class="separator">:</li>
-              <li><span class="seconds">00</span><p class="seconds_text">Detik</p></li>
-            </ul>
-            <div class="spasi">
-            </div>
-            <script type="text/javascript">
-              var now = new Date();
-              var day = now.getDate();
-              var month = now.getMonth() + 1;
-              var year = now.getFullYear() + 1;
-          
-              var nextyear = month + '/' + day + '/' + year + ' 07:07:07';
-              var harih = '03/21/2020 17:00:00';
 
-              $('#hitungmundur').countdown({
-                date: harih, // TODO Date format: 07/27/2017 17:00:00
-                offset: +7, // TODO Your Timezone Offset
-                day: 'Hari',
-                days: 'Hari'
-              }, function () {
-                alert('Done!');
-              });
-            </script>  
+          <!-- Countdown Realtime -->
+          <div style="margin-top: 20px;">
+            <ul id="hitungmundur">
+              <li><span id="cd-days">00</span><p>Hari</p></li>
+              <li class="separator">:</li>
+              <li><span id="cd-hours">00</span><p>Jam</p></li>
+              <li class="separator">:</li>
+              <li><span id="cd-minutes">00</span><p>Menit</p></li>
+              <li class="separator">:</li>
+              <li><span id="cd-seconds">00</span><p>Detik</p></li>
+            </ul>
+            <div id="countdown-done" class="countdown-done" style="display:none;">
+              🎉 Semoga Allah memberkahi pernikahan Fajar &amp; Aisyah
+            </div>
           </div>
-          <!-- End Countdown -->
+
+          <div class="spasi"></div>
         </div>
-        <!-- End Hero Content-->
-        <!-- Begin Hero Menu -->
-        <div class="hero-foot ">
+
+        <!-- Hero Menu Desktop -->
+        <div class="hero-foot">
           <div class="hero-foot--wrapper">
             <div class="columns">
               <div class="column is-12 hero-menu-desktop has-text-centered">
                 <ul>
-                  <li class="is-active">
-                    <a href="#home">Home</a>
-                  </li>
-                  <li>
-                    <a href="#Waktu">Waktu</a>
-                  </li>
-                  <li>
-                    <a href="#lokasi">Lokasi</a>
-                  </li>
-                  <li>
-                    <a href="#tentang-pasangan">Tentang CPW & CPP</a>
-                  </li>
-
-                  <li>
-                    <a href="#rsvp">RSVP</a>
-                  </li>
+                  <li class="is-active"><a href="#home">Home</a></li>
+                  <li><a href="#acara">Acara</a></li>
+                  <li><a href="#lokasi">Lokasi</a></li>
+                  <li><a href="#mempelai">Mempelai</a></li>
+                  <li><a href="#amplop">Amplop Digital</a></li>
+                  <li><a href="#rsvp">RSVP</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <!-- End Hero Menu -->
       </section>
-      <!-- End Hero -->
     </div>
-    <!-- End Header -->
 
-    <!-- Begin Main Content -->
+    <!-- Main Content -->
     <div class="main-content">
-    <!-- Begin regular-section-->
-     <section class="section-light no-padding-top regular-section has-text-centered has-vertically-aligned-content" id="regular-section">
-        
-        <div data-aos="fade-up" data-aos-easing="linear">
+
+      <!-- Bismillah & Nama -->
+      <section class="section-light no-padding-top regular-section has-text-centered has-vertically-aligned-content" id="regular-section">
+        <div data-aos="fade-up">
           <img src="image/bismillah.png" class="bismillah has-text-centered" alt="Bismillahirrahmaanirrahiim">
         </div>
-
-        <p class="bodytext" data-aos="fade-up" data-aos-easing="linear">
+        <p class="bodytext" data-aos="fade-up">
           Assalamu'alaikum Warahmatullahi Wabarakatuh.
           <br />
-          Dengan memohon rahmat dan ridha Allah swt, 
+          Dengan memohon rahmat dan ridha Allah Subhanahu Wa Ta'ala,
           <br />
           kami bermaksud mengundang Bapak/Ibu/Saudara/Saudari pada acara pernikahan kami
         </p>
-
-        <span class="space40px"></span>
         <span class="space40px"></span>
 
-        <div data-aos="fade-up" data-aos-easing="linear">
-          <div class="nama-lengkap" >
-            Nama Calon Mempelai Wanita
+        <!-- Hadits / Doa -->
+        <div class="hadits-box" data-aos="fade-up" style="max-width: 600px; margin: 0 auto 30px; color: #555; line-height: 1.6; padding: 0 20px;">
+          <div style="font-size: 1.6rem; font-family: 'Amiri', 'Scheherazade New', serif; color: #996E6D; margin-bottom: 12px; line-height: 2; font-weight: bold;">
+            وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
           </div>
-          <div class="ampersand">&</div>
-          <div class="nama-lengkap">
-          Nama Calon Mempelai Pria
+          <div style="font-style: italic; font-size: 0.95rem;">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
           </div>
-           
+          <strong style="color: #996E6D; font-size: 0.85rem; display: block; margin-top: 8px;">(QS. Ar-Rum: 21)</strong>
+        </div>
+
+        <div data-aos="fade-up">
+          <div class="nama-lengkap">Aisyah Nur Aulia</div>
+          <div class="ampersand">&amp;</div>
+          <div class="nama-lengkap">Muhammad Fajar Ramadhan</div>
         </div>
         <span class="space40px"></span>
-        <div data-aos="fade-up" data-aos-easing="linear">
+        <div data-aos="fade-up">
           <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
         </div>
         <span class="space40px"></span>
-        <span class="space40px"></span>
       </section>
-      <!-- End regular-section-->    
-      
-      <!-- Begin Waktu Section -->
-      <section class="section-dark" id="Waktu">
+
+      <!-- Acara: Akad & Resepsi -->
+      <section class="section-dark" id="acara">
         <div class="container">
-
-          <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="linear">
-            <h1 class="title has-text-centered section-title">Waktu</h1>
+          <div class="column is-12 regular-section" data-aos="fade-up">
+            <h1 class="title has-text-centered section-title">Rangkaian Acara</h1>
           </div>
-          <div class="columns is-multiline" data-aos="fade-up" data-aos-easing="linear">
-            <div
-              class="column is-4 has-vertically-aligned-content">
-            
-              <p class="is-larger has-text-centered">
-                  <div class="waktu tanggal-hari has-text-centered">Sabtu</div> 
-                  <div class="waktu tanggal-angka has-text-centered">21</div>
-                  <div class="waktu tanggal-bulan has-text-centered">Maret 2020</div>
-              </p>
-            
+          <div class="acara-flex" data-aos="fade-up">
+            <!-- Akad -->
+            <div class="acara-card">
+              <div class="acara-icon">🕌</div>
+              <div class="acara-judul">Akad Nikah</div>
+              <div class="acara-hari">Sabtu</div>
+              <div class="acara-tanggal">17</div>
+              <div class="acara-bulan">Oktober 2026</div>
+              <div class="acara-waktu">08.00 WIB</div>
+              <div class="acara-tempat">
+                Kediaman Mempelai Wanita<br>
+                Dsn. Sumberagung, Ds. Peterongan,<br>
+                Kec. Peterongan, Kab. Jombang
+              </div>
             </div>
-            <div class="column is-4 has-vertically-aligned-content">
-            
-              <p class="waktu is-larger has-text-centered">
-                Akad Nikah:
-                <br>
-                <strong>17.00 WIB</strong>
-              </p>
-            
+            <!-- Resepsi -->
+            <div class="acara-card">
+              <div class="acara-icon">🎊</div>
+              <div class="acara-judul">Resepsi</div>
+              <div class="acara-hari">Sabtu</div>
+              <div class="acara-tanggal">17</div>
+              <div class="acara-bulan">Oktober 2026</div>
+              <div class="acara-waktu">10.00 – 13.00 WIB</div>
+              <div class="acara-tempat">
+                Gedung Serbaguna Peterongan<br>
+                Jl. Raya Peterongan,<br>
+                Kec. Peterongan, Kab. Jombang
+              </div>
             </div>
-
-            <div class="column is-4 has-vertically-aligned-content">
-              
-              <h1 class="waktu is-larger has-text-centered">
-                Resepsi:
-                <br>
-                <strong>19.00  - 21.00 WIB</strong>
-              </h1>
-              
-              
-            </div>
-
-          </div>
-        </div>
-        <div class="space40px"></div>
-        <div class="main-content has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-          <a href="https://calendar.google.com/event?action=TEMPLATE..." target="_blank" class="button has-tooltip btn-cta" data-tooltip="Add to Calendar" target="_blank" data-aos="zoom-in">
-            <i class="far fa-calendar-plus"></i>
-            &nbsp;&nbsp;Google Calendar
-          </a>
-        </div>
-      </section>
-      <!-- End Waktu Content -->
-
-      <!-- Begin Lokasi Section -->
-      <section class="section-darker" id="lokasi" >
-        <div class="container">
-          <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="linear">
-            <h1 class="title has-text-centered section-title">Lokasi</h1>
-            <p class="tempat is-larger has-text-centered">
-              <strong>Nama Tempat</strong>
-              <br>
-              Jl. Alamat Lengkap No.9, RT.001/RW.006A,  
-              <br>
-              Kecamatan XXX, Kota XXX, Provinsi XXX
-              <br>
-            </p>
-          </div>
-          <div class="section-map" data-aos="fade-up" data-aos-easing="linear">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1280267408406!2d106.9691569150978!3d-6.246854895478259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d5988a190d9%3A0x22b6a052b0a6a5f3!2sRM.%20Pondok%20Kenanga!5e0!3m2!1sen!2sid!4v1579433583123!5m2!1sen!2sid" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
           </div>
           <div class="space40px"></div>
-          <div class="has-text-centered" data-aos="fade-up" data-aos-easing="linear">
-            <a href="https://maps.google.com/maps?ll=-6.246855,106.971346&z=16&t=m&hl=en&gl=ID&mapclient=embed&daddr=RM.%20Pondok%20Kenanga%20Jl.%20Kenanga%20Raya%20No.9%20RT.001%2FRW.006A%2C%20Jakasampurna%20Bekasi%20Barat%2C%20Bekasi%20City%2C%20West%20Java%2017145@-6.2468549,106.9713456" class="button btn-cta" target="_blank" data-aos="zoom-in">
-              <i class="far fa-directions"></i>
-              &nbsp;&nbsp;Google Maps
+          <div class="main-content has-text-centered" data-aos="fade-up">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Fajar+%26+Aisyah&dates=20261017T010000Z/20261017T060000Z&details=Akad+Nikah+08.00+WIB+%7C+Resepsi+10.00-13.00+WIB&location=Gedung+Serbaguna+Peterongan,+Jombang"
+               target="_blank" class="button has-tooltip btn-cta" data-tooltip="Simpan ke Kalender">
+              <i class="far fa-calendar-plus"></i>
+              &nbsp;&nbsp;Google Calendar
             </a>
           </div>
         </div>
       </section>
-      <!-- End Lokasi Content -->
 
-      <!-- Begin Tentang [Calon Mempelai Wanita] and [Calon Mempelai [Pria] -->
-      <section class="section-light regular-section is-fullheight" id="tentang-pasangan">
+      <!-- Lokasi -->
+      <section class="section-darker" id="lokasi">
         <div class="container">
-          <div class="columns is-multiline">  
-          <div class="column has-text-centered is-12 prolog">
-            <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear"> Tentang [Calon Mempelai Wanita] dan [Calon Mempelai [Pria]</h1>
-            
-
-          
-          <!-- IMAGES -->  
-        <div class=" tile">
-          <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child foto1 notification foto1" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">
-                <p class="title-foto">Foto 1</p>
-                <p class="subtitle-foto">
-                  Pertama kali saling kenal di <a href="https://google.com" target="_blank">Sebut Nama Tempat</a>
-                </p>
-              </div>
-            </article>
+          <div class="column is-12 regular-section" data-aos="fade-up">
+            <h1 class="title has-text-centered section-title">Lokasi Resepsi</h1>
+            <p class="tempat is-larger has-text-centered">
+              <strong>Gedung Serbaguna Peterongan</strong>
+              <br>
+              Jl. Raya Peterongan, Kec. Peterongan, Kab. Jombang
+            </p>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification foto2" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">
-                <p class="title-foto">
-                  Foto 2
-                </p>
-                <p class="subtitle-foto">
-                  Satu kantor, satu divisi, dan posisi tempat duduk saling membelakangi.
-                </p>   
-              </div>            
-            </article>
+          <div class="section-map" data-aos="fade-up">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.4!2d112.15!3d-7.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzQnMTIuMCJTIDExMsKwMDknMDAuMCJF!5e0!3m2!1sid!2sid!4v1"
+              width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="">
+            </iframe>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification foto3" data-aos="fade-up" data-aos-easing="linear">
-              <div class="content">  
-                <p class="title-foto">
-                  Foto 3
-                </p>
-                <p class="subtitle-foto">
-                  Cerita cinta dimulai
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <div class="space24px"></div>
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child notification foto6" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Foto 4</p>
-              <p class="subtitle-foto">Pertemuan 2 keluarga</p>
-            </div>
-          </article>
-        </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification foto4" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Foto 5</p>
-              <p class="subtitle-foto">Lamaran</p>
-            </div>
-          </article>
-        </div>
-        <div class="tile is-parent">              
-          <article class="tile is-child notification foto5" data-aos="fade-up" data-aos-easing="linear">
-            <div class="content">
-              <p class="title-foto">Foto 6</p>
-              <p class="subtitle-foto">Menikah</p>
-            </div>
-          </article>
-        </div>
-      </div>   
-          <!-- IMAGES -->
           <div class="space40px"></div>
-            <div data-aos="fade-up" data-aos-easing="linear">
-              <img src="image/divider-leaves.png" class="divider has-vertically-align" alt="~~~">
-            </div> 
-            <div class="space40px"></div>
-            <div class="space40px"></div>
-
+          <div class="has-text-centered" data-aos="fade-up">
+            <a href="https://maps.google.com/?q=Gedung+Serbaguna+Peterongan+Jombang" class="button btn-cta" target="_blank">
+              <i class="fas fa-location-arrow"></i>
+              &nbsp;&nbsp;Buka Google Maps
+            </a>
           </div>
         </div>
       </section>
-      <!-- End Tentang [Calon Mempelai Wanita] and [Calon Mempelai [Pria] -->
 
-      <!-- Begin RSVP Content -->
+      <!-- Akad Maps Section -->
+      <section class="section-light regular-section">
+        <div class="container">
+          <!-- Peta lokasi Akad Nikah -->
+          <div data-aos="fade-up" id="lokasi-akad">
+            <h2 class="title has-text-centered" style="font-size:1.1rem; color:#996E6D; font-family:'Raleway',sans-serif; font-weight:900; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Lokasi Akad Nikah</h2>
+            <p class="has-text-centered" style="color:#666; margin-bottom:16px;">
+              Kediaman Mempelai Wanita &mdash; Dsn. Sumberagung, Ds. Peterongan, Kec. Peterongan, Kab. Jombang
+            </p>
+            <div class="section-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.6!2d112.1483!3d-7.5689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780a3de2f5a4c5%3A0x0!2sPeterongan%2C%20Jombang%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1"
+                width="100%" height="380" frameborder="0" style="border:0; border-radius:12px;" allowfullscreen="">
+              </iframe>
+            </div>
+            <div class="has-text-centered" style="margin-top:20px;">
+              <a href="https://maps.google.com/?q=Peterongan,+Jombang,+Jawa+Timur" class="button btn-cta" target="_blank">
+                <i class="fas fa-location-arrow"></i>
+                &nbsp;&nbsp;Buka Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="space40px"></div>
+          
+          <!-- Profil cards -->
+          <div data-aos="fade-up" id="mempelai">
+            <h1 class="title has-text-centered section-title">Mempelai</h1>
+          </div>
+          <div class="columns is-centered" data-aos="fade-up">
+            <div class="column is-5">
+              <div class="profil-card">
+                <div class="profil-icon">👰</div>
+                <div class="profil-nama">Aisyah Nur Aulia</div>
+                <div class="profil-panggilan">Panggilan: Aisyah</div>
+                <div class="profil-info">
+                  <strong>Putri dari:</strong><br>
+                  Bapak H. Abdul Karim<br>
+                  &amp; Ibu Hj. Nurhayati<br><br>
+                  <strong>Alamat:</strong><br>
+                  Dsn. Sumberagung, Ds. Peterongan,<br>
+                  Kec. Peterongan, Kab. Jombang
+                </div>
+              </div>
+            </div>
+            <div class="column is-5">
+              <div class="profil-card">
+                <div class="profil-icon">🤵</div>
+                <div class="profil-nama">Muhammad Fajar Ramadhan</div>
+                <div class="profil-panggilan">Panggilan: Fajar</div>
+                <div class="profil-info">
+                  <strong>Putra dari:</strong><br>
+                  Bapak H. Ahmad Fauzi<br>
+                  &amp; Ibu Hj. Siti Aminah<br><br>
+                  <strong>Alamat:</strong><br>
+                  Dsn. Kedungrejo, Ds. Diwek,<br>
+                  Kec. Diwek, Kab. Jombang
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space40px"></div>
+          <div data-aos="fade-up">
+            <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
+          </div>
+          <div class="space40px"></div>
+        </div>
+      </section>
+
+      <!-- Amplop Digital -->
+      <section class="amplop-section" id="amplop">
+        <div data-aos="fade-up">
+          <h1 class="title has-text-centered section-title">Amplop Digital</h1>
+          <p class="has-text-centered" style="color:#666; margin-bottom: 20px;">
+            Bagi yang ingin memberikan hadiah, dapat melalui transfer berikut:
+          </p>
+          <div class="has-text-centered">
+            <div class="amplop-card">
+              <div class="bank-name">BCA</div>
+              <div class="rekening" id="norek">8274 1936 05</div>
+              <div class="atas-nama">a.n. Muhammad Fajar Ramadhan</div>
+              <button class="btn-copy" onclick="copyRekening(this)">
+                <i class="far fa-copy"></i> Salin Nomor Rekening
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
       <section class="section-dark contact" id="rsvp">
         <div class="container">
-          <div class="columns is-multiline">          
+          <div class="columns is-multiline">
             <div class="column is-12 prolog">
-              <h1 class="title has-text-centered section-title" data-aos="fade-up" data-aos-easing="linear">Konfirmasi Kehadiran</h1>
+              <h1 class="title has-text-centered section-title" data-aos="fade-up">Konfirmasi Kehadiran</h1>
             </div>
-            <div class="column is-12 prolog has-text-centered" data-aos="fade-up" data-aos-easing="linear">
+            <div class="column is-12 prolog has-text-centered" data-aos="fade-up">
               <p class="h2 subtitle">
                 Merupakan suatu kehormatan dan kebahagiaan bagi kami
                 <br>
                 apabila Bapak/Ibu/Saudara/Saudari berkenan hadir
                 memberikan doa restu.
-                <br>
-                <br>
-                Jika bisa hadir kami tunggu konfirmasinya, 
-                <br>
-                Informasi: Di meja penerima tamu akan kami sediakan hand sanitizer dan pemeriksaan suhu tubuh.
-                <br>
-                <br>
-                Jika tidak memungkinkan untuk hadir di pernikahan kami,tidak mengapa,
-                <br> 
-                semoga bisa berjumpa di lain kesempatan
-                <br>
-                <br>
-                Stay safe & jaga kesehatan ya :)
-                </p>
-     
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Halo%20CPW,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
+                <br><br>
+                Jika berkenan hadir, kami tunggu konfirmasinya. 🤍
+              </p>
+
+              <a href="https://api.whatsapp.com/send?phone=6282261489370&text=Halo%20Aisyah%2C%20saya%20akan%20hadir%20di%20acara%20pernikahanmu%20%F0%9F%8E%89"
+                 class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
                 <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp;Kabari CPW
+                &nbsp;&nbsp;Kabari Aisyah
               </a>
-              
 
-          
-              <a href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx&text=Halo%20CPP,%20saya%20akan%20datang%20di%20acara%20pernikahan&source=&data=" class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
+              <a href="https://api.whatsapp.com/send?phone=6281273946285&text=Halo%20Fajar%2C%20saya%20akan%20hadir%20di%20acara%20pernikahanmu%20%F0%9F%8E%89"
+                 class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
                 <i class="fab fa-whatsapp"></i>
-                &nbsp;&nbsp; Kabari CPP
-              </a >
-              <div class="space40px"></div>
+                &nbsp;&nbsp;Kabari Fajar
+              </a>
 
               <div class="space40px"></div>
-              <div data-aos="fade-up" data-aos-easing="linear">
+              <div data-aos="fade-up">
                 <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
               </div>
               <div class="space40px"></div>
-              <p class="h2 subtitle" data-aos="fade-up" data-aos-easing="linear">
-                Kami yang berbahagia,
-                <br>
-                <a class="instagram":" href="https://instagram.com/instagramaccount" target="_blank" alt="Instagram CPW">
-                  <i class="fab fa-instagram"></i> @instagramaccount
-                </a>
-                &nbsp
-                <a class="instagram" href="https://instagram.com/instagramaccount" target="_blank" alt="Instagram CPP">
-                  <i class="fab fa-instagram"></i> @instagramaccount
-                </a>
-              </p>
+              
+              <!-- Hadits / Doa Penutup -->
+              <div class="hadits-box" data-aos="fade-up" style="max-width: 600px; margin: 0 auto 30px; color: #555; line-height: 1.6; padding: 0 20px;">
+                <div style="font-size: 1.6rem; font-family: 'Amiri', 'Scheherazade New', serif; color: #996E6D; margin-bottom: 12px; line-height: 2; font-weight: bold;">
+                  بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ
+                </div>
+                <div style="font-style: italic; font-size: 0.95rem;">
+                  "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah, serta mengumpulkan kalian berdua dalam kebaikan."
+                </div>
+                <strong style="color: #996E6D; font-size: 0.85rem; display: block; margin-top: 8px;">(HR. Abu Dawud)</strong>
+              </div>
 
+              <p class="h2 subtitle" data-aos="fade-up">
+                Kami yang berbahagia,<br>
+                <strong style="color:#996E6D; font-size:1.1rem;">Aisyah &amp; Fajar</strong>
+              </p>
             </div>
- 
-         </div>
+          </div>
         </div>
       </section>
-      <!-- End RSVP Content -->
+
     </div>
     <!-- End Main Content -->
 
-    <!-- Begin Footer -->
+    <!-- Footer -->
     <div class="footer">
       <div class="container">
-        <a href="https://github.com/daengdoang/simple-wedding-invitation" class="has-vertically-align">
-          <p class="has-vertically-align">2020-2025 &copy @daengdoang </p>
-        </a>
-        <a href="https://bulma.io" class="has-vertically-align">
-          <img src="https://bulma.io/assets/images/made-with-bulma.png" alt="Made with Bulma">
-        </a>
-        <a href="https://www.netlify.com">
-          <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" alt="Deploy with Netlify"/>
-        </a>
+        <p>Dibuat dengan ❤️ untuk Fajar &amp; Aisyah &mdash; 17 Oktober 2026</p>
       </div>
     </div>
-    <!-- End Footer -->
+
+    <!-- Scroll to top -->
+    <button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Musik Latar -->
+    <audio id="bg-music" loop>
+      <source src="audio/instrumen/Violin_Guitar_Cover%20(1).mp3" type="audio/mpeg">
+      <!-- Fallback ke URL jika file lokal tidak ditemukan -->
+      <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_1808fbf07a.mp3?filename=wedding-piano-110595.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-btn" onclick="toggleMusic()">
+      <i class="fas fa-compact-disc"></i>
+    </button>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/menikah.js"></script>
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      AOS.init({
-        easing: "ease-out",
-        duration: 800,
-      });
+      // Buka Undangan Cover
+      function bukaUndangan() {
+        document.getElementById('cover-undangan').classList.add('open');
+        document.body.classList.remove('locked-scroll');
+        
+        // Mulai musik & tampilkan tombol
+        var musicBtn = document.getElementById('music-btn');
+        var bgMusic = document.getElementById('bg-music');
+        musicBtn.style.display = 'flex';
+        bgMusic.play().then(() => {
+          musicBtn.classList.add('playing');
+        }).catch(() => {
+          // Kalau autoplay diblok browser, biarkan user klik manual
+        });
+
+        // Trigger resize untuk fix map iframe dan animasi AOS
+        setTimeout(function() {
+          window.dispatchEvent(new Event('resize'));
+        }, 1000);
+      }
+
+      // Play/Pause Musik
+      function toggleMusic() {
+        var bgMusic = document.getElementById('bg-music');
+        var musicBtn = document.getElementById('music-btn');
+        if (bgMusic.paused) {
+          bgMusic.play();
+          musicBtn.classList.add('playing');
+        } else {
+          bgMusic.pause();
+          musicBtn.classList.remove('playing');
+        }
+      }
+
+      // AOS
+      AOS.init({ easing: "ease-out", duration: 800 });
+
+      // Countdown realtime ke 17 Oktober 2026 08:00 WIB (UTC+7)
+      var targetDate = new Date('2026-10-17T08:00:00+07:00');
+
+      function updateCountdown() {
+        var now = new Date();
+        var diff = targetDate - now;
+
+        if (diff <= 0) {
+          document.getElementById('hitungmundur').style.display = 'none';
+          document.getElementById('countdown-done').style.display = 'block';
+          return;
+        }
+
+        var days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent    = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent   = String(hours).padStart(2, '0');
+        document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Copy rekening
+      function copyRekening(btn) {
+        var norek = document.getElementById('norek').textContent.replace(/\s/g,'');
+        navigator.clipboard.writeText(norek).then(function() {
+          btn.textContent = '✓ Tersalin!';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.innerHTML = '<i class="far fa-copy"></i> Salin Nomor Rekening';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
     </script>
   </body>
 </html>
